@@ -1,0 +1,11 @@
+<form autocomplete="off" #myForm="ngForm">
+
+  <app-jbx-select
+    [options]="setOptions()"
+    [selecttitle]="'JBX SELECTOR'" >
+  </app-jbx-select>
+
+
+
+</form>
+<app-saveactor (Save)="wrapupAndSave($event)"></app-saveactor>

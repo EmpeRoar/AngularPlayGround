@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-12">
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <ng-container *ngFor="let customer of customers">
+
+            <tr>
+                <td>
+                  <ng-container [ngSwitch]="customer.Type">
+
+                      <ng-container *ngSwitchCase="1">
+                          [1] {{customer.Name}}
+                      </ng-container>
+
+                      <ng-container *ngSwitchCase="2">
+                          [2] {{customer.Name}}
+                      </ng-container>
+
+                      <ng-container *ngSwitchCase="3">
+                          [3] {{customer.Name}}
+                      </ng-container>
+
+                      <ng-container *ngSwitchDefault>
+                          [default] {{customer.Name}}
+                      </ng-container>
+
+                  </ng-container>
+                </td>
+                <td>
+                    {{customer.Type}}
+                </td>
+                <td>
+                  {{customer.Email}}
+                </td>
+            </tr>
+        </ng-container>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<p>customer works!</p>
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <input type="text" formControlName="firstName" class="form-control">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="lastName">
+  </div>
+  <div class="form-group">
+    <app-pg-select [items]="getListOfItems()"></app-pg-select>
+  </div>
+  <div class="form-group">
+    <button class="btn-primary">Save</button>
+  </div>
+</form>
+
+<div *ngIf="customer">
+{{ customer | json }}
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-primary" (click)="testCustomerEndpoint()">
+      Test Customer
+    </button>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-12">
+    <div *ngIf="good else temp1"></div>
+    <div *ngFor="let item of listOfItems">
+          <ng-template #temp1>
+            (1) {{item}}
+          </ng-template>
+          <ng-template #temp2>
+            (2) {{item}}
+          </ng-template>
+    </div>
+  </div>
+</div>
